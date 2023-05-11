@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-clr-orange: hsl(31, 77%, 52%);
+  --primary-clr-dark: hsl(184, 100%, 22%);
+  --primary-clr-verydark: hsl(179, 100%, 13%);
+  --neutral-clr-p: hsla(0, 0%, 100%, 0.75);
+  --neutral-clr-bg: hsl(0, 0%, 95%);
+  --fs-body: 0.9375rem;
+  --fs-title: 2.3rem;
+  --ff-body: "Lexend Deca", sans-serif;
+  --ff-accent: "Big Shoulders Display", cursive;
+}
+
+body {
+  line-height: 1.5;
+  background-color: var(--neutral-clr-bg);
+  font-family: var(--ff-body);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  /* padding-block: 3rem; */
+}
+.sr-only {
+  position: absolute;
+  left: -1000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.cards {
+  width: 90%;
+  max-width: 900px;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.5);
+  display: flex;
+  border-radius: 5px;
+}
+
+.card {
+  padding: 3rem;
+  color: var(--neutral-clr-p);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.card h2 {
+  text-transform: uppercase;
+  font-size: var(--fs-title);
+  font-family: var(--ff-accent);
+}
+
+.card p {
+  font-size: var(--fs-body);
+  margin-bottom: 2rem;
+}
+.btn {
+  padding: 0.8rem 1rem;
+  border: 2px solid var(--neutral-clr-bg);
+  border-radius: 30px;
+  font-size: var(--fs-body);
+  margin: 0.5rem 0;
+  width: 70%;
+}
+
+.card-1 {
+  background-color: var(--primary-clr-orange);
+  border-radius: 5px 0 0 5px;
+}
+
+.card-1 .btn {
+  color: var(--primary-clr-orange);
+}
+.card-2 {
+  background-color: var(--primary-clr-dark);
+}
+.card-2 .btn {
+  color: var(--primary-clr-dark);
+}
+.card-3 {
+  background-color: var(--primary-clr-verydark);
+  border-radius: 0 5px 5px 0px;
+}
+.card-3 .btn {
+  color: var(--primary-clr-verydark);
+}
+.btn:hover {
+  background-color: transparent;
+  color: white;
+}
+
+@media (max-width: 999px) {
+  .cards {
+    flex-direction: column;
+    margin-block: 3rem;
+  }
+  .card {
+    gap: 1rem;
+  }
+  .card p {
+    margin-bottom: 0;
+  }
+  .card-1 {
+    border-radius: 5px 5px 0 0;
+  }
+  .card-3 {
+    border-radius: 0 0 5px 5px;
+  }
+}
